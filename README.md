@@ -1,49 +1,134 @@
-# ForecastFlow AI - Sales & Demand Forecasting System
+# Task 1 - ForecastFlow AI: Sales & Demand Forecasting System
 
-ForecastFlow AI is a professional full-stack platform leveraging Machine Learning to convert historical business data into actionable forecasts. This project is built as a complete deliverable for internship and portfolio evaluation.
+## Overview
 
-## Features & Implementation
+ForecastFlow AI is a full-stack Sales & Demand Forecasting platform designed to transform historical business data into actionable forecasts and business insights. The system combines data processing, machine learning forecasting, interactive visualizations, and business intelligence features to help organizations make data-driven decisions.
 
-1. **Robust Data Processing Pipeline**
-   - Handles missing and null values through time-based interpolation.
-   - Cleans and aggregates messy CSV entries daily.
-   - Extracts powerful seasonal features (`day_of_week`, `month`, lags, rolling averages).
+## Key Features
 
-2. **Machine Learning Forecasting**
-   - Real model evaluation yielding comprehensive metrics (MAPE, R², MAE, RMSE).
-   - Generates baseline trend predictions combined with seasonal decomposition.
-   - Outputs an interactive 90-day future horizon.
-   - (Includes code for XGBoost evaluation in Python script `python_backend/ml_pipeline.py`).
+### Data Processing Pipeline
 
-3. **Interactive Business UI**
-   - Full dark mode support.
-   - File upload system to retrain models on custom CSV datasets instantly.
-   - Responsive, boardroom-ready dashboards with Recharts.
-   - AI-driven automatic business insights.
+* Handles missing and null values using interpolation techniques
+* Cleans and aggregates raw sales datasets
+* Performs feature engineering using:
+
+  * Day of Week
+  * Month
+  * Lag Features
+  * Rolling Averages
+* Supports custom dataset uploads
+
+### Machine Learning Forecasting
+
+* Generates sales and demand forecasts for future periods
+* Model evaluation using:
+
+  * MAPE (Mean Absolute Percentage Error)
+  * MAE (Mean Absolute Error)
+  * RMSE (Root Mean Squared Error)
+  * R² Score
+* Seasonal trend analysis and forecasting
+* Includes XGBoost-based forecasting pipeline
+
+### Interactive Dashboard
+
+* Modern responsive UI
+* Dark mode interface
+* Forecast visualization charts
+* Category-wise demand analysis
+* AI-generated business insights
+* Export report functionality
+
+## Technology Stack
+
+### Frontend
+
+* React
+* TypeScript
+* Vite
+* Recharts
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Machine Learning
+
+* Python
+* FastAPI
+* Pandas
+* NumPy
+* Scikit-learn
+* XGBoost
 
 ## Project Structure
 
-- `server.ts` : Fast, full-stack Express + Node.js backend. Serves the React front-end and runs the live time-series forecasting.
-- `src/` : Detailed React architecture implementing the real-world Business Intelligence dashboard.
-- `dataset/` : Includes sample raw sales metrics (for upload).
-- `python_backend/` : Contains the industry-standard **FastAPI** + **Pandas** + **XGBoost** implementation, identical to real-world deployment needs.
+```text
+ForecastFlow-AI/
+│
+├── src/                 # React Frontend
+├── python_backend/      # FastAPI & ML Pipeline
+├── dataset/             # Sample Datasets
+├── server.ts            # Node.js Backend
+├── package.json         # Project Dependencies
+├── tsconfig.json        # TypeScript Configuration
+└── README.md
+```
 
-## Setup Instructions
+## Installation & Setup
 
-### Option 1: Run Full-stack (Node + React via Vite)
-1. Install dependencies: `npm install`
-2. Run development environment: `npm run dev`
-3. Backend runs smoothly alongside Vite on Port `3000`. Full file-upload capability is intact.
+### Clone Repository
 
-### Option 2: Run Python Backend
-1. Navigate to directory: `cd python_backend`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Launch FastAPI server: `uvicorn main:app --reload`
+```bash
+git clone <repository-url>
+cd ForecastFlow-AI
+```
 
-### option 3: Run by this link
-https://forecastflow-ai.onrender.com/
+### Install Dependencies
 
-## Forecasting Methodology
+```bash
+npm install
+```
 
-The core engine uses a combination of Linear Regression for baseline growth tracking interwoven with seasonal error correction matrices. This ensures robust forecasting resistant to missing dates while remaining extraordinarily fast in a live Node/Typescript environment. 
-For production enterprise environments, the provided `ml_pipeline.py` provides the drop-in XGBoost Regression replacement.
+### Run Application
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+### Run Python ML Backend
+
+```bash
+cd python_backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+## Business Value
+
+This system helps organizations:
+
+* Forecast future sales trends
+* Optimize inventory management
+* Improve demand planning
+* Identify seasonal patterns
+* Support data-driven decision making
+* Generate actionable business insights
+
+## Author
+
+**Srisanth Palla**
+
+B.Tech CSE (AI & ML)
+Pragati Engineering College
+
+## Task Submission
+
+This repository was submitted as **Task 1 - Sales Forecasting & Demand Intelligence System**.
